@@ -126,3 +126,5 @@ attachEvent.OnServerEvent:Connect(function(player, team, morph, primary, seconda
 	end
 	
 end)
+
+true
