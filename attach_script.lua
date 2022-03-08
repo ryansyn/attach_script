@@ -92,11 +92,7 @@ end
 
 attachEvent.OnServerEvent:Connect(function(player, team, morph, primary, secondary)
 	local character = player.Character;
-	print(player.Name);
-	print(team);
-	print(morph);
-	print(primary);
-	print(secondary);
+	print(player.Name..team..morph..primary..secondary);
 	
 	if character:FindFirstChild("morph") then
 		character.morph:Destroy();
@@ -117,16 +113,12 @@ attachEvent.OnServerEvent:Connect(function(player, team, morph, primary, seconda
 		end
 	end
 	
-	if primary == "All" then
-		print("All weapons given")
-	elseif SS.character_guns.primaries:FindFirstChild(primary) then
+	if SS.character_guns.primaries:FindFirstChild(primary) then
 		local weapon_clone = SS.character_guns.primaries:FindFirstChild(primary):Clone();
 		weapon_clone.Parent = player.Backpack;
 	end
 	
-	if secondary == "All" then
-		print("All weapons given")
-	elseif SS.character_guns.secondaries:FindFirstChild(secondary) then
+	if SS.character_guns.secondaries:FindFirstChild(secondary) then
 		local weapon_clone = SS.character_guns.secondaries:FindFirstChild(secondary):Clone();
 		weapon_clone.Parent = player.Backpack;
 	end
